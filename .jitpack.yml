@@ -3,6 +3,7 @@ jdk:
 
 settings:
   install: skip  # 跳过安装阶段
+  build: skip
   
 before_install:
   - echo "Preparing JAR file..."
