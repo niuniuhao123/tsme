@@ -1,14 +1,13 @@
-jdk: openjdk11  # 必须指定 JDK 版本
+jdk:
+  - openjdk11  # 必须指定 JDK 版本（即使不需要编译）
 
-# 完全跳过构建过程
-install: skip
-
-# 自定义发布流程
+settings:
+  install: skip  # 跳过安装阶段
+  
 before_install:
-  - echo "准备发布 JAR 文件..."
+  - echo "Preparing JAR file..."
   - mkdir -p build/libs
-  - cp ts-v3.jar build/libs/ts-v3.jar
-
-# 明确声明要发布的构件
+  - cp ts-v3.jar build/libs/ts-v3.jar  # 确保文件名格式正确
+  
 artifacts:
-  - build/libs/ts-v3.jar
+  - build/libs/ts-v3.jar  # 明确声明要发布的构件
